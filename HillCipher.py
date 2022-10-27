@@ -26,8 +26,30 @@ def Encrypt(matrix, word):
 
 
 
-def Decrypt(matrix, word):
-    pass
+def Decrypt(matrix, word): #work in progress
+    inversDict = {
+        1: 1,
+        9: 3,
+        21: 5,
+        15: 7,
+        3: 9,
+        19: 11,
+        7: 15,
+        23: 17,
+        11: 19,
+        5: 21,
+        17: 23,
+        25: 25
+    }
+
+    word = word.ljust((len(word) + (len(matrix) - (len(word) % len(matrix)))), 'x')
+    chunks = [word[i:(i+len(matrix))] for i in range(0, len(word), len(matrix))]
+    wordToNmr = [[(ord(i)-96) for i in chunk] for chunk in chunks]
+
+    
+
+
+
 
 
 
